@@ -1,6 +1,7 @@
 package com.patronDTO.LocalProduct.controller;
 
 import com.patronDTO.LocalProduct.entity.Local;
+import com.patronDTO.LocalProduct.projection.interfacebased.open.LocalOpenView;
 import com.patronDTO.LocalProduct.service.impl.LocalServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,11 @@ public class LocalController {
     @GetMapping("/findAll")
     public List<Local> findAll(){
         return localService.findAll();
+    }
+
+    @GetMapping("/findAllOpenView")
+    public List<LocalOpenView> findAllOpenView(){
+        return localService.findBy();
     }
 
 }
