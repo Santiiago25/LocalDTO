@@ -9,4 +9,6 @@ public interface ProductClosedView {
 
     String getBrand();
 
+    LocalClosedView getLocal();
+
 }

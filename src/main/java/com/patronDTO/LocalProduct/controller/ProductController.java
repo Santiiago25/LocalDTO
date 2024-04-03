@@ -5,10 +5,12 @@ import com.patronDTO.LocalProduct.projection.interfacebased.close.ProductClosedV
 import com.patronDTO.LocalProduct.service.impl.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("api/product")
@@ -26,6 +28,11 @@ public class ProductController {
     @GetMapping("/findAllProductsClosedView")
     public List<ProductClosedView> findAllProductsClosedView(){
         return productService.findBy();
+    }
+
+    @GetMapping("findProductById/{idProduct}")
+    public Optional<ProductClosedView> findProductById(@PathVariable Long idProduct){
+        return productService.findProductById(idProduct);
     }
 
 }
