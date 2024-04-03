@@ -1,6 +1,7 @@
 package com.patronDTO.LocalProduct.controller;
 
 import com.patronDTO.LocalProduct.entity.Product;
+import com.patronDTO.LocalProduct.projection.interfacebased.close.ProductClosedView;
 import com.patronDTO.LocalProduct.service.impl.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,12 @@ public class ProductController {
     @GetMapping("/findAll")
     public List<Product> findAll(){
         return productService.findAll();
+    }
+
+    //Closed View Interface Based
+    @GetMapping("/findAllProductsClosedView")
+    public List<ProductClosedView> findAllProductsClosedView(){
+        return productService.findBy();
     }
 
 }

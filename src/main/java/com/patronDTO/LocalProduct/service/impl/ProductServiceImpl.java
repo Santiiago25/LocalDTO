@@ -1,6 +1,7 @@
 package com.patronDTO.LocalProduct.service.impl;
 
 import com.patronDTO.LocalProduct.entity.Product;
+import com.patronDTO.LocalProduct.projection.interfacebased.close.ProductClosedView;
 import com.patronDTO.LocalProduct.repository.ProductRepository;
 import com.patronDTO.LocalProduct.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,5 +18,10 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> findAll() {
         return (List<Product>) productRepository.findAll();
+    }
+
+    @Override
+    public List<ProductClosedView> findBy() {
+        return productRepository.findBy();
     }
 }
