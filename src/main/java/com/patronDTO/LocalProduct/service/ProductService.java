@@ -15,4 +15,8 @@ public interface ProductService {
     Optional<ProductClosedView> findProductById(Long id);
 
     List<ProductDTO> findProductBy();
+
+    ProductClosedView findByBrandDynamicClosedView(String brand);
+
+    ProductDTO findByBrandDynamicClassBased(String brand);
 }

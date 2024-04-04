@@ -36,4 +36,16 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductDTO> findProductBy() {
         return productRepository.findProductBy();
     }
+
+    @Override
+    public ProductClosedView findByBrandDynamicClosedView(String brand) {
+        ProductClosedView productClosedView = productRepository.findProductByBrand(brand, ProductClosedView.class);
+        return productClosedView;
+    }
+
+    @Override
+    public ProductDTO findByBrandDynamicClassBased(String brand) {
+        ProductDTO productDTO = productRepository.findProductByBrand(brand, ProductDTO.class);
+        return productDTO;
+    }
 }

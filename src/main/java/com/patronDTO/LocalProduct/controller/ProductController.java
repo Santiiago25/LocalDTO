@@ -41,4 +41,14 @@ public class ProductController {
         return productService.findProductBy();
     }
 
+    @GetMapping("/findProductByBrandDynamicClossedView/{brand}")
+    public ProductClosedView findProductByBrandDynamicClossedView(@PathVariable(name = "brand") String brand){
+        return productService.findByBrandDynamicClosedView(brand);
+    }
+
+    @GetMapping("/findProductByBrandDynamicClassBased/{brand}")
+    public ProductDTO findProductByBrandDynamicClassBased(@PathVariable(name = "brand") String brand){
+        return productService.findByBrandDynamicClassBased(brand);
+    }
+
 }

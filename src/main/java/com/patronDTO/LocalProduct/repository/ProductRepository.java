@@ -20,4 +20,7 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
     // View Class Based DTO
     List<ProductDTO> findProductBy();
 
+    // Dynamic
+    <T> T findProductByBrand(String brand, Class<T> type);
+
 }
