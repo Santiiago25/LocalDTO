@@ -1,6 +1,7 @@
 package com.patronDTO.LocalProduct.service;
 
 import com.patronDTO.LocalProduct.entity.Product;
+import com.patronDTO.LocalProduct.projection.classbased.ProductDTO;
 import com.patronDTO.LocalProduct.projection.interfacebased.close.ProductClosedView;
 
 import java.util.List;
@@ -12,4 +13,6 @@ public interface ProductService {
     List<ProductClosedView> findBy();
 
     Optional<ProductClosedView> findProductById(Long id);
+
+    List<ProductDTO> findProductBy();
 }

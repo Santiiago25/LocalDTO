@@ -1,6 +1,7 @@
 package com.patronDTO.LocalProduct.service.impl;
 
 import com.patronDTO.LocalProduct.entity.Product;
+import com.patronDTO.LocalProduct.projection.classbased.ProductDTO;
 import com.patronDTO.LocalProduct.projection.interfacebased.close.ProductClosedView;
 import com.patronDTO.LocalProduct.repository.ProductRepository;
 import com.patronDTO.LocalProduct.service.ProductService;
@@ -29,5 +30,10 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Optional<ProductClosedView> findProductById(Long id) {
         return productRepository.findProductByIdProduct(id);
+    }
+
+    @Override
+    public List<ProductDTO> findProductBy() {
+        return productRepository.findProductBy();
     }
 }

@@ -1,6 +1,7 @@
 package com.patronDTO.LocalProduct.controller;
 
 import com.patronDTO.LocalProduct.entity.Product;
+import com.patronDTO.LocalProduct.projection.classbased.ProductDTO;
 import com.patronDTO.LocalProduct.projection.interfacebased.close.ProductClosedView;
 import com.patronDTO.LocalProduct.service.impl.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,9 +31,14 @@ public class ProductController {
         return productService.findBy();
     }
 
-    @GetMapping("findProductById/{idProduct}")
+    @GetMapping("/findProductById/{idProduct}")
     public Optional<ProductClosedView> findProductById(@PathVariable Long idProduct){
         return productService.findProductById(idProduct);
+    }
+
+    @GetMapping("/findProductClassBased")
+    public List<ProductDTO> findProductClassBased(){
+        return productService.findProductBy();
     }
 
 }
